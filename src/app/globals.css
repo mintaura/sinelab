@@ -1,0 +1,289 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --color-davy-gray: #565656;
+  --color-butterfly-blue: #00afff;
+  --color-night-black: #020202;
+  --color-jaguar-black: #010101;
+  --color-lily-white: #e6f9ff;
+  --color-teal-blue: #b9c2ff;
+  --color-bubble-gum: #ffbed8;
+  --color-bright-sky: #00c6ff;
+  --color-clear-blue: #0072ff;
+  --color-alice-blue: #eafaff;
+  --color-pale-sky: #b0fff0;
+  --color-iron: #d3d3d3;
+  --color-ghost-white: #f9faff;
+  --color-cinder: #151515;
+  --color-aqua-blue: #00c6ff;
+  --text-custom-xl: 22px;
+  --text-custom-2xl: 26px;
+  --text-custom-3xl: 28px;
+  --text-custom-5xl: 40px;
+  --text-custom-7xl: 62px;
+  --breakpoint-xs: 375px;
+  --breakpoint-custom-sm: 500px;
+  --breakpoint-custom-xl: 1400px;
+  --shadow-light-blue: 0px 12px 30px 0px #00c6ff4d;
+  --shadow-light-grey: 0px 0px 16px 0px #00000014;
+  --shadow-light-blue: 0px 0px 20px 0px #00afff50;
+  --shadow-medium-blue: 0px 0px 20px 0px #5c7dfe90;
+  --shadow-purple-inset: 0px 0px 32px 0px #5c7dfe33 inset;
+  --shadow-white-inset: 0px 4px 4px 0px #ffffff40 inset,
+    0px -4px 4px 0px #ffffff40 inset;
+  --shadow-white-medium-inset: 0px 1.6px 3.2px 0px #00000014,
+    0px 4px 4px 0px #ffffffb2 inset;
+  --shadow-medium-gray: 0px 0px 35px 0px #0000011f;
+  --shadow-medium-black: 8px 8px 24px 0px #0000001f;
+}
+
+@layer base {
+  body {
+    font-family: "Space Grotesk", sans-serif !important;
+  }
+}
+
+@layer components {
+  .section-x-gap {
+    @apply px-4 sm:px-6 md:px-8;
+  }
+
+  .custom-container {
+    @apply max-w-[1140px] mx-auto w-full;
+  }
+
+  .gradient-blue-text {
+    background: linear-gradient(180deg, #00c6ff -51.69%, #0072ff 188.01%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .gradient-blue {
+    background: linear-gradient(180deg, #00c6ff -51.69%, #0072ff 188.01%);
+  }
+}
+@layer utilities {
+  .gradient-blue-line {
+    height: 0.7px;
+    background: linear-gradient(
+      90deg,
+      rgba(0, 198, 255, 0) 12.43%,
+      #00c6ff 46.66%,
+      rgba(0, 198, 255, 0) 90.92%
+    );
+  }
+  .icon-box {
+    background: linear-gradient(
+      321.29deg,
+      rgba(0, 198, 255, 0.2) 22.72%,
+      rgba(0, 198, 255, 0) 74.04%
+    );
+  }
+  .partner-slider .swiper-wrapper {
+    transition-timing-function: linear !important;
+  }
+  .gradient-blue-button {
+    --fill-o: 1;
+    --border-o: 0;
+    transition: color 0.3s ease;
+  }
+
+  .gradient-blue-button::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(180deg, #00c6ff -51.69%, #0072ff 188.01%);
+    opacity: var(--fill-o);
+    transition: opacity 0.3s ease;
+    z-index: -1;
+  }
+
+  .gradient-blue-button::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(180deg, #00c6ff -51.69%, #0072ff 188.01%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: var(--border-o);
+    transition: opacity 0.3s ease;
+    z-index: -1;
+  }
+
+  .gradient-blue-button:hover {
+    --fill-o: 0;
+    --border-o: 1;
+    background: linear-gradient(180deg, #00c6ff -51.69%, #0072ff 188.01%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .gradient-blue-button > span * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .footer-links {
+    position: relative;
+    display: inline-block;
+    color: black;
+    overflow: hidden;
+  }
+
+  .footer-links::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(180deg, #00c6ff -51.69%, #0072ff 188.01%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  .footer-links:hover::after {
+    opacity: 1;
+  }
+  .review-card {
+    position: relative;
+    z-index: 1;
+  }
+
+  .review-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(
+      180deg,
+      rgba(0, 198, 255, 0.24) -51.69%,
+      rgba(0, 114, 255, 0.24) 188.01%
+    );
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  .review-slider-navigation::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 9999px;
+    padding: 1px;
+    background: linear-gradient(180deg, #00c6ff -51.69%, #0072ff 188.01%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .review-slider-navigation:hover:not(:disabled) {
+    background: linear-gradient(180deg, #00c6ff -51.69%, #0072ff 188.01%);
+  }
+
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--color-ghost-white);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-butterfly-blue);
+    border-radius: 999px;
+  }
+
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .footer-gradient-line {
+    background: linear-gradient(
+      270deg,
+      rgba(0, 0, 0, 0) -3.6%,
+      rgba(0, 0, 0, 0.24) 45.21%,
+      rgba(0, 0, 0, 0) 95.52%
+    );
+  }
+
+  .hero-logo-effect {
+    box-shadow: 6px 6px 12px 0px #00c6ff80, -6px 6px 12px 0px #0072ff80,
+      2px 16px 10px 0px #ffffff80 inset, -2px -16px 10px 0px #ffffff80 inset;
+
+    animation: breathing-shadow 4s ease-in-out infinite;
+  }
+  .dashboard-card {
+    background: linear-gradient(
+      109.29deg,
+      rgba(0, 198, 255, 0.7) -0.58%,
+      rgba(0, 114, 255, 0.7) 107.28%
+    );
+  }
+
+  .cart-circle {
+    background: linear-gradient(
+      180deg,
+      #0072ff -8%,
+      #00c6ff 36.67%,
+      rgba(156, 233, 254, 0.5) 68.68%,
+      rgba(197, 242, 254, 0.5) 78.4%,
+      rgba(230, 249, 254, 0.796008) 83.8%,
+      #fdfefe 99.4%
+    );
+  }
+  .review-slider-navigation {
+    @apply custom-xl:absolute cursor-pointer bg-white disabled:cursor-not-allowed w-12 h-12 custom-xl:top-1/2 max-custom-xl:!translate-0 disabled:opacity-50 -translate-y-1/2 z-10 rounded-full flex justify-center items-center overflow-hidden;
+  }
+  .nav-links {
+    @apply font-normal text-base !leading-[150%] text-nowrap tracking-normal text-davy-gray hover:text-butterfly-blue duration-300 transition-all cursor-pointer p-2;
+  }
+  .dashboard-sidebar-secondary-btn {
+    @apply w-full after:opacity-0 hover:after:opacity-100 after:inset-0 after:bg-gradient-to-br overflow-hidden after:from-bright-sky relative after:absolute after:to-clear-blue hover:text-white py-3 pl-3 pr-2 text-nowrap cursor-pointer after:duration-300 after:transition-all rounded-xl transition-all duration-300 text-base !leading-[150%] font-normal tracking-normal;
+  }
+
+  @keyframes breathing-shadow {
+    0%,
+    100% {
+      box-shadow: 4px 4px 8px 0px #00c6ff40, -4px 4px 8px 0px #0072ff40,
+        2px 12px 6px 0px #ffffff40 inset, -2px -12px 6px 0px #ffffff40 inset;
+    }
+
+    50% {
+      box-shadow: 14px 14px 28px 0px #00c6ffcc, -14px 14px 28px 0px #0072ffcc,
+        2px 26px 16px 0px #ffffffcc inset, -2px -26px 16px 0px #ffffffcc inset;
+    }
+  }
+}
+.review-slider-navigation svg path {
+  @apply transition-all duration-300;
+  fill: linear-gradient(180deg, #00c6ff -51.69%, #0072ff 188.01%);
+}
+
+.review-slider-navigation:hover,
+.review-slider-navigation:focus {
+  background: linear-gradient(180deg, #00c6ff -51.69%, #0072ff 188.01%);
+}
+
+.review-slider-navigation:hover svg path,
+.review-slider-navigation:focus svg path {
+  fill: white; /* stays white */
+}
