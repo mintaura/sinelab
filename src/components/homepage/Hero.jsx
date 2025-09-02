@@ -27,7 +27,7 @@ const Hero = () => {
               </span>
               &nbsp; Businesses with Innovative&nbsp;
               <span className={`relative inline-block`}>
-                Tool
+                Tools
                 <span className="absolute bottom-0 left-0 w-full -z-10">
                   <HeadingBottom />
                 </span>
